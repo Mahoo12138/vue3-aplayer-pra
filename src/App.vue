@@ -1,32 +1,56 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app id="inspire">
+
+    <v-app-bar app clipped-left>
+
+      <v-toolbar-title>黄同学的音乐空间</v-toolbar-title>
+    </v-app-bar>
+
+    <v-content>
+              <div style="display: flex;height: 100%;width: 100%">
+                <v-card color="#212121" class="item1">
+                  <list></list>
+                </v-card>
+                <v-card color="#212121" class="item2">
+                  <player></player>
+                </v-card>
+              </div>
+    </v-content>
+
+    <v-footer app>
+      <span>&copy; 2019 - 2020 Mahoo12138</span>
+    </v-footer>
+  </v-app>
 </template>
 
+<script>
+  import List from './components/List/List'
+  import Player from "./components/Player/Player";
+  export default {
+    components: {
+      List,
+      Player
+    },
+    props: {
+      source: String,
+    },
+    data: () => ({
+      drawer: null,
+    }),
+    created () {
+      this.$vuetify.theme.dark = true
+    },
+  }
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  @import "assets/css/base.css";
+  .item1{
+    flex: 2.5;
+    margin: 20px 10px 20px 30px;
+  }
+  .item2{
+    padding-top: 10px;
+    flex: 1;
+    margin: 20px 30px 20px 10px;
+  }
 </style>

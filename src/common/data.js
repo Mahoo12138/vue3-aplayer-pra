@@ -1,0 +1,62 @@
+export default [
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',
+  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',
+  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',
+  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',
+  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',
+  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',
+  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',  },
+  {
+    singer: '周杰伦',
+    name: '退后',
+    album: '什么好',
+    pic: '',
+    link: 'http://pan.cccyun.cc/view.php/c94b2dcb83cece392dbd0f5366e8ec9c.mp3',  },
+]

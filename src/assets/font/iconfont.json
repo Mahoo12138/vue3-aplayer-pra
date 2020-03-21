@@ -1,0 +1,51 @@
+{
+  "id": "1704914",
+  "name": "my_player",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12575443",
+      "name": "Mute 静音",
+      "font_class": "Mute",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "12575446",
+      "name": "Last 上一曲",
+      "font_class": "Last",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "12575450",
+      "name": "Next 下一曲",
+      "font_class": "Next",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "12575452",
+      "name": "Play 播放",
+      "font_class": "Play",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "12575456",
+      "name": "Volume 音量",
+      "font_class": "Volume",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "12575457",
+      "name": "Pause 暂停",
+      "font_class": "Pause",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    }
+  ]
+}
