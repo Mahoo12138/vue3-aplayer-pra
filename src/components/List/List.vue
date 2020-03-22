@@ -2,7 +2,7 @@
 <div class="list">
     <v-chip
             v-for="(item,index) in items"
-            :key="item"
+            :key="index"
             class="ma-2 list-item"
             label
             @click="changeSong(index)"
@@ -25,8 +25,12 @@
     methods: {
       changeSong(index){
         console.log("click!");
-        // console.log(index)
-        this.$store.commit('changeSong',data[index])
+        console.log("当前歌曲序列："+index)
+        this.$store.commit({
+          type: 'changeSong',
+          song: data[index],
+          index: index,
+        })
       }
     }
   }

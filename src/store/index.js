@@ -12,18 +12,39 @@ export default new Vuex.Store({
       album: 'null',
       pic: 'null',
       link: 'null'
-    }
+    },
+    currentIndex: 0,
   },
   mutations: {
-    changeSong(state,song){
-      state.currentSong = song;
+    changeSong(state,payload){
+      state.currentSong = payload.song;
       console.log("响应点击")
+      state.currentIndex = payload.index
+      console.log("歌曲数据为:"+payload.index)
       state.changeSongSwitch = 1;
+    },
+    firstPlay(state,song){
+      state.currentSong = song
+    },
+    nextSong(state,payload){
+      if(payload.index === 0){
+        state.currentIndex = 0
+        state.currentSong = payload.song
+        state.changeSongSwitch = 1;
+      }else{
+        state.currentSong = payload.song
+        state.currentIndex = payload.index
+        state.changeSongSwitch = 1;
+      }
+
     }
   },
   getters: {
     getChangeSongSwitch(state){
       return state.changeSongSwitch
+    },
+    getCurrentIndex(state){
+      return state.currentIndex
     }
   },
 
