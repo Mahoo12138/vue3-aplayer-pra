@@ -1,7 +1,7 @@
 <template>
 <div class="list">
     <v-chip
-            v-for="(item,index) in items"
+            v-for="(item,index) in sheet"
             :key="index"
             class="ma-2 list-item"
             label
@@ -16,20 +16,31 @@
 <script>
   import data from '../../common/data'
   export default {
+    props:{
+        sheetIndex: Number,
+    },
     name: "List",
     data() {
       return{
-        items: data,
+        // 歌单序列
+        index: this.sheetIndex
+      }
+    },
+    computed:{
+      sheet(){
+        // 当前歌单
+        return data[this.index]
       }
     },
     methods: {
       changeSong(index){
         console.log("click!");
-        console.log("当前歌曲序列："+index)
+        console.log("当前歌单序列：" + this.index)
+        console.log("当前歌曲序列：" + index)
         this.$store.commit({
           type: 'changeSong',
-          song: data[index],
-          index: index,
+          song: this.sheet[index],
+          index: [this.index,index],
         })
       }
     }
