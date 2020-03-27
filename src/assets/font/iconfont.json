@@ -6,46 +6,487 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "12575443",
-      "name": "Mute 静音",
-      "font_class": "Mute",
-      "unicode": "e637",
-      "unicode_decimal": 58935
+      "icon_id": "3145454",
+      "name": "湿度",
+      "font_class": "shidu",
+      "unicode": "e606",
+      "unicode_decimal": 58886
     },
     {
-      "icon_id": "12575446",
-      "name": "Last 上一曲",
-      "font_class": "Last",
-      "unicode": "e636",
-      "unicode_decimal": 58934
+      "icon_id": "6677860",
+      "name": "风速",
+      "font_class": "fengsu",
+      "unicode": "e618",
+      "unicode_decimal": 58904
     },
     {
-      "icon_id": "12575450",
-      "name": "Next 下一曲",
-      "font_class": "Next",
-      "unicode": "e638",
-      "unicode_decimal": 58936
+      "icon_id": "8629111",
+      "name": "空气质量1",
+      "font_class": "kongqizhiliang",
+      "unicode": "e625",
+      "unicode_decimal": 58917
     },
     {
-      "icon_id": "12575452",
-      "name": "Play 播放",
-      "font_class": "Play",
-      "unicode": "e639",
-      "unicode_decimal": 58937
+      "icon_id": "8053846",
+      "name": "n13-特大暴雨",
+      "font_class": "n-tedabaoyu",
+      "unicode": "e8df",
+      "unicode_decimal": 59615
     },
     {
-      "icon_id": "12575456",
-      "name": "Volume 音量",
-      "font_class": "Volume",
-      "unicode": "e63a",
-      "unicode_decimal": 58938
+      "icon_id": "8053847",
+      "name": "d17-大雪",
+      "font_class": "d-daxue",
+      "unicode": "e8e0",
+      "unicode_decimal": 59616
     },
     {
-      "icon_id": "12575457",
-      "name": "Pause 暂停",
-      "font_class": "Pause",
-      "unicode": "e63b",
-      "unicode_decimal": 58939
+      "icon_id": "8053848",
+      "name": "n29-大雪转暴雪",
+      "font_class": "n-daxuezhuanbaoxue",
+      "unicode": "e8e1",
+      "unicode_decimal": 59617
+    },
+    {
+      "icon_id": "8053849",
+      "name": "d28-中雪转大雪",
+      "font_class": "d-zhongxuezhuandaxue",
+      "unicode": "e8e2",
+      "unicode_decimal": 59618
+    },
+    {
+      "icon_id": "8053850",
+      "name": "n28-中雪转大雪",
+      "font_class": "n-zhongxuezhuandaxue",
+      "unicode": "e8e3",
+      "unicode_decimal": 59619
+    },
+    {
+      "icon_id": "8053851",
+      "name": "d29-大雪转暴雪",
+      "font_class": "d-daxuezhuanbaoxue",
+      "unicode": "e8e4",
+      "unicode_decimal": 59620
+    },
+    {
+      "icon_id": "8053852",
+      "name": "n3-阴",
+      "font_class": "n-yin",
+      "unicode": "e8e5",
+      "unicode_decimal": 59621
+    },
+    {
+      "icon_id": "8053853",
+      "name": "n18-暴雪",
+      "font_class": "n-baoxue",
+      "unicode": "e8e6",
+      "unicode_decimal": 59622
+    },
+    {
+      "icon_id": "8053854",
+      "name": "d18-暴雪",
+      "font_class": "d-baoxue",
+      "unicode": "e8e7",
+      "unicode_decimal": 59623
+    },
+    {
+      "icon_id": "8053855",
+      "name": "n17-大雪",
+      "font_class": "n-daxue",
+      "unicode": "e8e8",
+      "unicode_decimal": 59624
+    },
+    {
+      "icon_id": "8054091",
+      "name": "n33-霾",
+      "font_class": "n-mai",
+      "unicode": "e8e9",
+      "unicode_decimal": 59625
+    },
+    {
+      "icon_id": "8054092",
+      "name": "d33-霾",
+      "font_class": "d-mai",
+      "unicode": "e8ea",
+      "unicode_decimal": 59626
+    },
+    {
+      "icon_id": "8053790",
+      "name": "d19-雾",
+      "font_class": "d-wu",
+      "unicode": "e8a9",
+      "unicode_decimal": 59561
+    },
+    {
+      "icon_id": "8053791",
+      "name": "d25-暴雨转大暴雨",
+      "font_class": "d-baoyuzhuandabaoyu",
+      "unicode": "e8aa",
+      "unicode_decimal": 59562
+    },
+    {
+      "icon_id": "8053792",
+      "name": "d22-小雨转中雨",
+      "font_class": "d-xiaoyuzhuanzhongyu",
+      "unicode": "e8ab",
+      "unicode_decimal": 59563
+    },
+    {
+      "icon_id": "8053793",
+      "name": "n1-晴",
+      "font_class": "n-qing",
+      "unicode": "e8ac",
+      "unicode_decimal": 59564
+    },
+    {
+      "icon_id": "8053794",
+      "name": "d23-中雨转大雨",
+      "font_class": "d-zhongyuzhuandayu",
+      "unicode": "e8ad",
+      "unicode_decimal": 59565
+    },
+    {
+      "icon_id": "8053795",
+      "name": "d4-阵雨",
+      "font_class": "d-zhenyu",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
+      "icon_id": "8053796",
+      "name": "d32-强沙尘暴",
+      "font_class": "d-qiangshachenbao",
+      "unicode": "e8af",
+      "unicode_decimal": 59567
+    },
+    {
+      "icon_id": "8053797",
+      "name": "d24-大雨转暴雨",
+      "font_class": "d-dayuzhuanbaoyu",
+      "unicode": "e8b0",
+      "unicode_decimal": 59568
+    },
+    {
+      "icon_id": "8053798",
+      "name": "n5-雷阵雨",
+      "font_class": "n-leizhenyu",
+      "unicode": "e8b1",
+      "unicode_decimal": 59569
+    },
+    {
+      "icon_id": "8053799",
+      "name": "d20-冻雨",
+      "font_class": "d-dongyu",
+      "unicode": "e8b2",
+      "unicode_decimal": 59570
+    },
+    {
+      "icon_id": "8053801",
+      "name": "n7-雨夹雪",
+      "font_class": "n-yujiaxue",
+      "unicode": "e8b3",
+      "unicode_decimal": 59571
+    },
+    {
+      "icon_id": "8053802",
+      "name": "n4-阵雨",
+      "font_class": "n-zhenyu",
+      "unicode": "e8b4",
+      "unicode_decimal": 59572
+    },
+    {
+      "icon_id": "8053803",
+      "name": "d15-小雪",
+      "font_class": "d-xiaoxue",
+      "unicode": "e8b5",
+      "unicode_decimal": 59573
+    },
+    {
+      "icon_id": "8053804",
+      "name": "d31-扬沙",
+      "font_class": "d-yangsha",
+      "unicode": "e8b6",
+      "unicode_decimal": 59574
+    },
+    {
+      "icon_id": "8053805",
+      "name": "d5-雷阵雨",
+      "font_class": "d-leizhenyu",
+      "unicode": "e8b7",
+      "unicode_decimal": 59575
+    },
+    {
+      "icon_id": "8053806",
+      "name": "n2-多云",
+      "font_class": "n-duoyun",
+      "unicode": "e8b8",
+      "unicode_decimal": 59576
+    },
+    {
+      "icon_id": "8053807",
+      "name": "d11-暴雨",
+      "font_class": "d-baoyu",
+      "unicode": "e8b9",
+      "unicode_decimal": 59577
+    },
+    {
+      "icon_id": "8053808",
+      "name": "d21-沙尘暴",
+      "font_class": "d-shachenbao",
+      "unicode": "e8ba",
+      "unicode_decimal": 59578
+    },
+    {
+      "icon_id": "8053809",
+      "name": "d27-小雪转中雪",
+      "font_class": "d-xiaoxuezhuanzhongxue",
+      "unicode": "e8bb",
+      "unicode_decimal": 59579
+    },
+    {
+      "icon_id": "8053810",
+      "name": "d30-浮尘",
+      "font_class": "d-fuchen",
+      "unicode": "e8bc",
+      "unicode_decimal": 59580
+    },
+    {
+      "icon_id": "8053811",
+      "name": "d10-大雨",
+      "font_class": "d-dayu",
+      "unicode": "e8bd",
+      "unicode_decimal": 59581
+    },
+    {
+      "icon_id": "8053812",
+      "name": "n27-小雪转中雪",
+      "font_class": "n-xiaoxuezhuanzhongxue",
+      "unicode": "e8be",
+      "unicode_decimal": 59582
+    },
+    {
+      "icon_id": "8053813",
+      "name": "d6-雷阵雨伴有冰雹",
+      "font_class": "d-leizhenyubanyoubingbao",
+      "unicode": "e8bf",
+      "unicode_decimal": 59583
+    },
+    {
+      "icon_id": "8053814",
+      "name": "d2-多云",
+      "font_class": "d-duoyun",
+      "unicode": "e8c0",
+      "unicode_decimal": 59584
+    },
+    {
+      "icon_id": "8053815",
+      "name": "n32-强沙尘暴",
+      "font_class": "n-qiangshachenbao",
+      "unicode": "e8c1",
+      "unicode_decimal": 59585
+    },
+    {
+      "icon_id": "8053817",
+      "name": "n31-扬沙",
+      "font_class": "n-yangsha",
+      "unicode": "e8c2",
+      "unicode_decimal": 59586
+    },
+    {
+      "icon_id": "8053818",
+      "name": "n16-中雪",
+      "font_class": "n-zhongxue",
+      "unicode": "e8c3",
+      "unicode_decimal": 59587
+    },
+    {
+      "icon_id": "8053819",
+      "name": "n30-浮尘",
+      "font_class": "n-fuchen",
+      "unicode": "e8c4",
+      "unicode_decimal": 59588
+    },
+    {
+      "icon_id": "8053820",
+      "name": "n24-大雨转暴雨",
+      "font_class": "n-dayuzhuanbaoyu",
+      "unicode": "e8c5",
+      "unicode_decimal": 59589
+    },
+    {
+      "icon_id": "8053821",
+      "name": "d8-小雨",
+      "font_class": "d-xiaoyu",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "8053822",
+      "name": "n6-雷阵雨伴有冰雹",
+      "font_class": "n-leizhenyubanyoubingbao",
+      "unicode": "e8c7",
+      "unicode_decimal": 59591
+    },
+    {
+      "icon_id": "8053823",
+      "name": "d7-雨夹雪",
+      "font_class": "d-yujiaxue",
+      "unicode": "e8c8",
+      "unicode_decimal": 59592
+    },
+    {
+      "icon_id": "8053824",
+      "name": "n11-暴雨",
+      "font_class": "n-baoyu",
+      "unicode": "e8c9",
+      "unicode_decimal": 59593
+    },
+    {
+      "icon_id": "8053825",
+      "name": "d9-中雨",
+      "font_class": "d-zhongyu",
+      "unicode": "e8ca",
+      "unicode_decimal": 59594
+    },
+    {
+      "icon_id": "8053826",
+      "name": "n19-雾",
+      "font_class": "n-wu",
+      "unicode": "e8cb",
+      "unicode_decimal": 59595
+    },
+    {
+      "icon_id": "8053827",
+      "name": "n20-冻雨",
+      "font_class": "n-dongyu",
+      "unicode": "e8cc",
+      "unicode_decimal": 59596
+    },
+    {
+      "icon_id": "8053828",
+      "name": "d3-阴",
+      "font_class": "d-yin",
+      "unicode": "e8cd",
+      "unicode_decimal": 59597
+    },
+    {
+      "icon_id": "8053829",
+      "name": "n23-中雨转大雨",
+      "font_class": "n-zhongyuzhuandayu",
+      "unicode": "e8ce",
+      "unicode_decimal": 59598
+    },
+    {
+      "icon_id": "8053830",
+      "name": "n25-暴雨转大暴雨",
+      "font_class": "n-baoyuzhuandabaoyu",
+      "unicode": "e8cf",
+      "unicode_decimal": 59599
+    },
+    {
+      "icon_id": "8053831",
+      "name": "n8-小雨",
+      "font_class": "n-xiaoyu",
+      "unicode": "e8d0",
+      "unicode_decimal": 59600
+    },
+    {
+      "icon_id": "8053832",
+      "name": "n15-小雪",
+      "font_class": "n-xiaoxue",
+      "unicode": "e8d1",
+      "unicode_decimal": 59601
+    },
+    {
+      "icon_id": "8053833",
+      "name": "d12-大暴雨",
+      "font_class": "d-dabaoyu",
+      "unicode": "e8d2",
+      "unicode_decimal": 59602
+    },
+    {
+      "icon_id": "8053834",
+      "name": "n10-大雨",
+      "font_class": "n-dayu",
+      "unicode": "e8d3",
+      "unicode_decimal": 59603
+    },
+    {
+      "icon_id": "8053835",
+      "name": "n9-中雨",
+      "font_class": "n-zhongyu",
+      "unicode": "e8d4",
+      "unicode_decimal": 59604
+    },
+    {
+      "icon_id": "8053836",
+      "name": "n12-大暴雨",
+      "font_class": "n-dabaoyu",
+      "unicode": "e8d5",
+      "unicode_decimal": 59605
+    },
+    {
+      "icon_id": "8053837",
+      "name": "n21-沙尘暴",
+      "font_class": "n-shachenbao",
+      "unicode": "e8d6",
+      "unicode_decimal": 59606
+    },
+    {
+      "icon_id": "8053838",
+      "name": "d26-大暴雨转特大暴雨",
+      "font_class": "d-dabaoyuzhuantedabaoyu",
+      "unicode": "e8d7",
+      "unicode_decimal": 59607
+    },
+    {
+      "icon_id": "8053839",
+      "name": "n26-大暴雨转特大暴雨",
+      "font_class": "n-dabaoyuzhuantedabaoyu",
+      "unicode": "e8d8",
+      "unicode_decimal": 59608
+    },
+    {
+      "icon_id": "8053840",
+      "name": "n22-小雨转中雨",
+      "font_class": "n-xiaoyuzhuanzhongyu",
+      "unicode": "e8d9",
+      "unicode_decimal": 59609
+    },
+    {
+      "icon_id": "8053841",
+      "name": "d13-特大暴雨",
+      "font_class": "d-tedabaoyu",
+      "unicode": "e8da",
+      "unicode_decimal": 59610
+    },
+    {
+      "icon_id": "8053842",
+      "name": "d16-中雪",
+      "font_class": "d-zhongxue",
+      "unicode": "e8db",
+      "unicode_decimal": 59611
+    },
+    {
+      "icon_id": "8053843",
+      "name": "d14-阵雪",
+      "font_class": "d-zhenxue",
+      "unicode": "e8dc",
+      "unicode_decimal": 59612
+    },
+    {
+      "icon_id": "8053844",
+      "name": "n14-阵雪",
+      "font_class": "n-zhenxue",
+      "unicode": "e8dd",
+      "unicode_decimal": 59613
+    },
+    {
+      "icon_id": "8053845",
+      "name": "d1-晴",
+      "font_class": "d-qing",
+      "unicode": "e8de",
+      "unicode_decimal": 59614
     }
   ]
 }

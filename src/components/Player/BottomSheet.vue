@@ -1,6 +1,6 @@
 <template>
     <div class="text-center" style="display: inline">
-        <v-btn class="ma-4" width="45px"  height="45px" icon @click="sheetSwitch = !sheetSwitch">
+        <v-btn icon @click="sheetSwitch = !sheetSwitch">
             <v-icon size="30" >mdi-dots-vertical</v-icon>
         </v-btn>
         <v-bottom-sheet v-model="sheetSwitch">

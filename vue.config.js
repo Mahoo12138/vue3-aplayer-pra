@@ -6,7 +6,6 @@ module.exports = {
     // 设置代理
     open: false, //是否自动弹出浏览器页面
     https: false,
-    hotOnly: false,
     proxy: {
       "/api": {
         target: 'http://apis.juhe.cn', // 域名

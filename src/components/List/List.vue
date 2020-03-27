@@ -1,5 +1,5 @@
 <template>
-<div class="list">
+<v-container class="list">
     <v-chip
             v-for="(item,index) in sheet"
             :key="index"
@@ -9,7 +9,7 @@
     >
         {{index+1 + '. '+ item.singer + ' - ' +  item.name}}
     </v-chip>
-</div>
+</v-container>
 </template>
 
 
@@ -56,7 +56,7 @@
     margin-left: 10px;
 }
     .list-item{
-        flex: 0 0 30%;
+             flex: 0 0 30%;
     }
 
 </style>

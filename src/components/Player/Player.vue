@@ -8,27 +8,40 @@
                 aspect-ratio="1"
         ></v-img>
         <div class="control">
-            <v-btn class="ma-4" v-if="currentVolume===0" width="45px" height="45px" icon @click="volumeOn">
-                            <v-icon size="30" >mdi-volume-off</v-icon>
-                        </v-btn>
-            <v-btn class="ma-4" v-else-if="currentVolume>=0 && currentVolume <= 30" width="45px" height="45px" icon @click="volumeOff">
-                <v-icon size="30" >mdi-volume-low</v-icon>
-            </v-btn>
-            <v-btn class="ma-4" v-else-if="currentVolume>30 && currentVolume <= 65"  width="45px" height="45px" icon @click="volumeOff">
-                <v-icon size="30" >mdi-volume-medium</v-icon>
-            </v-btn>
-            <v-btn class="ma-4" v-else-if="currentVolume>65 && currentVolume <= 100"  width="45px" height="45px" icon @click="volumeOff">
-                <v-icon size="30" >mdi-volume-high</v-icon>
-            </v-btn>
-                        <v-btn class="ma-1" width="45px" height="45" icon @click="lastSong">
-                            <v-icon size="45">mdi-skip-previous</v-icon>
-                        </v-btn>
-                        <v-btn width="65px" height="65" class="ma-sm-1 pa-2" icon @click="pausePlay">
-                            <v-icon size="55">{{playStatus[playIcon]}}</v-icon>
-                        </v-btn>
+            <div class="con-item">
+                <v-btn  v-if="currentVolume===0" icon @click="volumeOn">
+                    <v-icon size="30" >mdi-volume-off</v-icon>
+                </v-btn>
+                <v-btn v-else-if="currentVolume>=0 && currentVolume <= 30"  icon @click="volumeOff">
+                    <v-icon size="30" >mdi-volume-low</v-icon>
+                </v-btn>
+                <v-btn v-else-if="currentVolume>30 && currentVolume <= 65"   icon @click="volumeOff">
+                    <v-icon size="30" >mdi-volume-medium</v-icon>
+                </v-btn>
+                <v-btn v-else-if="currentVolume>65 && currentVolume <= 100"   icon @click="volumeOff">
+                    <v-icon size="30" >mdi-volume-high</v-icon>
+                </v-btn>
+            </div>
+            <div class="con-item">
+                <v-btn icon @click="lastSong">
+                    <v-icon size="45">mdi-skip-previous</v-icon>
+                </v-btn>
+            </div>
+
+            <div class="con-item">
+                <v-btn icon @click="pausePlay">
+                    <v-icon size="55">{{playStatus[playIcon]}}</v-icon>
+                </v-btn>
+            </div>
+            <div class="con-item">
+                <v-btn icon @click="nextSong">
+                    <v-icon size="45" >mdi-skip-next</v-icon>
+                </v-btn>
+            </div>
             <v-snackbar
                     v-model="snackbar"
                     :timeout="2000"
+                    top
             >
                 {{ text }}
                 <v-btn
@@ -39,13 +52,7 @@
                     Close
                 </v-btn>
             </v-snackbar>
-
-            <v-btn class="ma-1" width="45px" height="45" icon @click="nextSong">
-                <v-icon size="45" >mdi-skip-next</v-icon>
-            </v-btn>
-
-            <bottom-sheet></bottom-sheet>
-
+            <bottom-sheet class="con-item"></bottom-sheet>
         </div>
         <div class="progress" >
             <v-slider
@@ -125,9 +132,6 @@
         player.volume = n/100
       }
     },
-    created(){
-      console.log(this.$store.state.currentVolume)
-    },
     methods: {
       volumeOff(){
         this.$store.commit('volumeOff')
@@ -182,7 +186,7 @@
         }
       },
       nextSong(){
-        console.log(this.currentSheet.length + '/' + this.music.currentIndex)
+        console.log(this.currentSheet)
         if(this.music.currentIndex + 1 >= this.currentSheet.length){
           this.snackbar = true
           console.log("最后一首")
@@ -287,9 +291,16 @@
         margin-bottom: 3em;
         text-align: center;
         line-height: 1;
+        display: flex;
         position: relative;
         .volume{
             height: 20px;
+        }
+        .con-item{
+            flex: 1;
+        }
+        .con-center{
+            flex: 2;
         }
     }
 </style>
