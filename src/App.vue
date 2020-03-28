@@ -1,6 +1,5 @@
 <template>
   <v-app id="inspire">
-
     <v-app-bar app clipped-left dense>
       <v-toolbar-title>黄同学的音乐空间</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -13,8 +12,6 @@
             v-model="dialog"
             width="300"
     >
-
-
       <v-card>
         <v-card-title
                 class="headline blue-grey darken-4"
@@ -22,7 +19,6 @@
         >
           温馨提醒
         </v-card-title>
-
         <v-card-text class="pa-5">
 
           <p style="font-size: 18px">当前音乐播放器暂不支持移动端！</p>
@@ -65,21 +61,25 @@
 
     <v-content>
       <div style="display: flex;height: 100%;width: 100%">
-                <v-card color="#212121" class="item1">
+                <v-card  class="item1">
                   <tab :sheets="sheets">
+
                     <template v-slot:item0>
                       <list :sheet-index="0"></list>
                     </template>
+
                     <template v-slot:item1>
                       <list :sheet-index="1"></list>
                     </template>
+
                     <template v-slot:item2>
                       <list :sheet-index="2"></list>
                     </template>
+
                   </tab>
                   <other/>
                 </v-card>
-                <v-card color="#212121" class="item2">
+                <v-card  class="item2">
                     <player></player>
                 </v-card>
               </div>

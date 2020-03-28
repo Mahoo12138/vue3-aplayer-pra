@@ -2,11 +2,7 @@
     <v-container>
         <p class="font-weight-black text-center songs">{{music.name}}</p>
         <p class="font-weight-light text-center singer">{{music.singer}}</p>
-        <v-img
-                class="songs-img"
-                src="../../assets/images/avatar.png"
-                aspect-ratio="1"
-        ></v-img>
+        <v-img class="songs-img" :src="music.pic" aspect-ratio="1"></v-img>
         <div class="control">
             <div class="con-item">
                 <v-btn  v-if="currentVolume===0" icon @click="volumeOn">
@@ -54,6 +50,9 @@
             </v-snackbar>
             <bottom-sheet class="con-item"></bottom-sheet>
         </div>
+        <div class="lyric">
+            <p>{{music.currentLrc}}</p>
+        </div>
         <div class="progress" >
             <v-slider
                     @change="changeTime"
@@ -77,6 +76,8 @@
   import data from '../../common/data'
   import tips from '../../common/tips'
   import BottomSheet from "./BottomSheet";
+  import {test} from "../../common/request";
+
   export default {
     name: "Player",
     components: {BottomSheet},
@@ -89,9 +90,11 @@
         music: {
           name: '暂无音乐播放',
           singer: 'Mahoo12138',
+          lrc: '',
           pic: '',
           link: '',
           album: '',
+          currentLrc:'',
           currentTime: 0,
           totalTime: 0,
           progressValue: 0,
@@ -172,6 +175,15 @@
           player.play()
           console.log("开始播放")
 
+          test({
+            url: 'down.php/f1f113c2850727c605b1a5a0d186fc9a.lrc',
+          }).then(res => {
+            console.log(res)
+             this.music.lrc = this.parseLrc(res.data)
+          })
+
+
+
         }else{
           this.playIcon = this.playIconSet
           if(player.paused){
@@ -229,6 +241,13 @@
          if(player.ended){
            this.nextSong()
          }else{
+           for(let i = 0; i < this.music.lrc.ms.length ; i++){
+             console.log(parseFloat(this.music.lrc.ms[i].t))
+             if (parseFloat(this.music.lrc.ms[i].t) <= player.currentTime && player.currentTime < parseFloat(this.music.lrc.ms[i+1].t)){
+               console.log(this.music.lrc.ms[i].c)
+               this.music.currentLrc = this.music.lrc.ms[i].c
+             }
+           }
            this.music.currentTime = player.currentTime
            this.music.totalTime = player.duration
            console.log("当前音量："+ player.volume*100);
@@ -246,6 +265,53 @@
 
        }
       },
+      parseLrc(lrc){
+        const oLRC = {
+          ti: "", //歌曲名
+          ar: "", //演唱者
+          al: "", //专辑名
+          by: "", //歌词制作人
+          offset: 0, //时间补偿值，单位毫秒，用于调整歌词整体位置
+          ms: [] //歌词数组{t:时间,c:歌词}
+        };
+        if(lrc.length===0) return;
+          let lrcs = lrc.split('\n');//用回车拆分成数组
+          for(let i in lrcs) {//遍历歌词数组
+            lrcs[i] = lrcs[i].replace(/(^\s*)|(\s*$)/g, ""); //去除前后空格
+            let t = lrcs[i].substring(lrcs[i].indexOf("[") + 1, lrcs[i].indexOf("]"));//取[]间的内容
+            let s = t.split(":");//分离:前后文字
+            if(isNaN(parseInt(s[0]))) { //不是数值
+              for (let i in oLRC) {
+                if (i !== "ms" && i === s[0].toLowerCase()) {
+                  oLRC[i] = s[1];
+                }
+              }
+            }else { //是数值
+              let arr = lrcs[i].match(/\[(\d+:.+?)\]/g);//提取时间字段，可能有多个
+              let start = 0;
+              for(let k in arr){
+                start += arr[k].length; //计算歌词位置
+              }
+              let content = lrcs[i].substring(start);//获取歌词内容
+              for (let k in arr){
+                let t = arr[k].substring(1, arr[k].length-1);//取[]间的内容
+                let s = t.split(":");//分离:前后文字
+                oLRC.ms.push({//对象{t:时间,c:歌词}加入ms数组
+                  t: (parseFloat(s[0])*60+parseFloat(s[1])).toFixed(3),
+                  c: content
+                });
+              }
+            }
+          }
+          oLRC.ms.sort( (a, b) => {//按时间顺序排序
+            return a.t-b.t;
+          })
+          // for(let i in oLRC){ //查看解析结果
+          //     console.log(i,":",oLRC[i]);
+          // }
+        // console.log(oLRC)
+        return oLRC
+        }
     },
     mounted(){
         this.$nextTick(()=>{
@@ -256,6 +322,9 @@
 </script>
 
 <style scoped lang="less">
+    .lyric{
+        text-align: center;
+    }
     .progress{
         padding: 0 1.8rem;
         position: relative;
@@ -288,7 +357,7 @@
         width: 100%;
         height: 50px;
         margin-top: 2.5em;
-        margin-bottom: 3em;
+        margin-bottom: 2em;
         text-align: center;
         line-height: 1;
         display: flex;

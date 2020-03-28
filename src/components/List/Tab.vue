@@ -1,8 +1,10 @@
 <template>
     <v-card>
-        <v-toolbar flat color="blue-grey darken-4" dark>
+
+        <v-toolbar flat>
             <v-toolbar-title>我的歌单</v-toolbar-title>
         </v-toolbar>
+
         <v-tabs vertical>
             <v-tab>
                 <v-icon left>mdi-account</v-icon>
@@ -22,11 +24,13 @@
                 <slot name="item0"></slot>
                 </v-card>
             </v-tab-item>
+
             <v-tab-item>
                 <v-card flat>
                     <slot name="item1"></slot>
                 </v-card>
             </v-tab-item>
+
             <v-tab-item>
                 <slot name="item2"></slot>
             </v-tab-item>

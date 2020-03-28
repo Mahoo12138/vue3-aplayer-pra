@@ -9,6 +9,17 @@ export function request(config) {
     headers: {
       'Content-Type': 'application/json'
     },
-  })
+  });
+  return axiosInstance(config)
+}
+
+export function test(config) {
+  const axiosInstance = axios.create({
+    baseURL: '/test',
+    timeout: 5000,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  });
   return axiosInstance(config)
 }

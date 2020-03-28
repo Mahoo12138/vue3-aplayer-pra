@@ -1,9 +1,9 @@
 export default [
       [ {
-        singer: '薛之谦',
-        name: '演员',
-        album: '什么好',
-        pic: '',
+        singer: '许嵩',
+        name: '有何不可',
+        album: '自定义',
+        pic: 'http://p2.music.126.net/Md3RLH0fe2a_3dMDnfqoQg==/18590542604286213.jpg',
         link: '1.mp3',
       },
         {
