@@ -41,7 +41,7 @@
             >
                 {{ text }}
                 <v-btn
-                        color="pink"
+                        color="#e2e2e2"
                         text
                         @click="snackbar = false"
                 >
@@ -94,8 +94,8 @@
           pic: '',
           link: '',
           album: '',
-          currentLrc:'',
-          currentTime: 0,
+          currentLrc:'暂无歌词',
+          currentTime: -1,
           totalTime: 0,
           progressValue: 0,
           currentIndex: 0,
@@ -148,6 +148,16 @@
       },
       lastSong(){
         console.log("last!")
+       if (this.music.currentIndex === 0){
+         this.text = tips.firstSong
+         this.snackbar = true
+       }else {
+         this.music.currentIndex -= 1
+         this.$store.commit("nextSong",{
+           song: this.currentSheet[this.music.currentIndex],
+           index: [this.music.currentSheetIndex, this.music.currentIndex]
+         })
+       }
       },
       playSong(){
         this.music.currentIndex = this.$store.getters.getCurrentIndex
@@ -169,6 +179,8 @@
           this.snackbar = true
           this.text = tips.firstPlay
           this.$store.commit('firstPlay',this.currentSheet[this.music.currentIndex])
+          console.log(this.music.currentSheetIndex)
+          console.log(this.currentSheet[this.music.currentIndex])
           this.refreshPage()
           this.playIcon = this.playIconSet
           console.log('歌曲是否播放： '+ player.paused)
@@ -181,9 +193,6 @@
             console.log(res)
              this.music.lrc = this.parseLrc(res.data)
           })
-
-
-
         }else{
           this.playIcon = this.playIconSet
           if(player.paused){
@@ -198,22 +207,22 @@
         }
       },
       nextSong(){
-        console.log(this.currentSheet)
         if(this.music.currentIndex + 1 >= this.currentSheet.length){
+          this.text = tips.lastSong
           this.snackbar = true
-          console.log("最后一首")
-          this.text = tips.LastSong
+          // console.log("最后一首")
           this.$store.commit("nextSong",{
             song: this.currentSheet[0],
             index: 0
           })
-          console.log("最后一首的下一曲")
+          // console.log("最后一首的下一曲")
         }else{
-          console.log("正常下一曲,第" + (this.music.currentIndex+2) + "首")
+          // console.log("正常下一曲,第" + (this.music.currentIndex+2) + "首")
+          // console.log(this.music.currentSheetIndex)
           this.music.currentIndex += 1
           this.$store.commit("nextSong",{
             song: this.currentSheet[this.music.currentIndex],
-            index: [this.currentSheetIndex, this.music.currentIndex]
+            index: [this.music.currentSheetIndex, this.music.currentIndex]
           })
         }
       },
@@ -224,6 +233,8 @@
         this.music.pic = this.song.pic
         this.music.link = this.song.link
         this.music.currentIndex = this.$store.getters.getCurrentIndex
+        // console.log(this.$store.getters.getCurrentSheetIndex)
+        // console.log(this.music.currentSheetIndex)
         this.music.currentSheetIndex = this.$store.getters.getCurrentSheetIndex
         player.src = this.music.link
       },
@@ -238,15 +249,30 @@
       playingMusic() {
         if(player.readyState===4 && !player.paused){
          // console.log("正在播放")
-         if(player.ended){
+         if(player.ended || player.currentTime === player.duration){
            this.nextSong()
          }else{
            for(let i = 0; i < this.music.lrc.ms.length ; i++){
-             console.log(parseFloat(this.music.lrc.ms[i].t))
-             if (parseFloat(this.music.lrc.ms[i].t) <= player.currentTime && player.currentTime < parseFloat(this.music.lrc.ms[i+1].t)){
-               console.log(this.music.lrc.ms[i].c)
-               this.music.currentLrc = this.music.lrc.ms[i].c
+             //console.log(parseFloat(this.music.lrc.ms[i].t))
+             if (this.music.lrc.ms[i+1]){
+               //console.log(this.music.lrc.ms[i+1].c)
+               if (parseFloat(this.music.lrc.ms[i].t) <= player.currentTime && player.currentTime < parseFloat(this.music.lrc.ms[i+1].t)){
+                 console.log('1: ' + this.music.lrc.ms[i+1].c)
+                 if (this.music.lrc.ms[i].c === ''){
+                   console.log('2: ' + this.music.lrc.ms[i-1].c)
+                   this.music.currentLrc = this.music.lrc.ms[i-1].c
+                 } else {
+                   console.log('3: ' + this.music.lrc.ms[i].c)
+                   this.music.currentLrc = this.music.lrc.ms[i].c
+                 }
+               }
+             }else{
+               if (parseFloat(this.music.lrc.ms[i].t) <= player.currentTime){
+                 this.music.currentLrc = this.music.lrc.ms[i].c
+               }
              }
+
+
            }
            this.music.currentTime = player.currentTime
            this.music.totalTime = player.duration
@@ -309,7 +335,7 @@
           // for(let i in oLRC){ //查看解析结果
           //     console.log(i,":",oLRC[i]);
           // }
-        // console.log(oLRC)
+        console.log(oLRC)
         return oLRC
         }
     },

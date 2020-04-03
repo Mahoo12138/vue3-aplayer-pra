@@ -14,6 +14,7 @@ export default new Vuex.Store({
       link: 'null'
     },
     currentIndex: 0,
+    currentSheetIndex: 0,
     currentVolume: 100,
     lastVolume: 0
     // 0 为记忆音量
@@ -21,7 +22,7 @@ export default new Vuex.Store({
   mutations: {
     changeSong(state,payload){
       state.currentSong = payload.song;
-      // console.log("响应点击")
+      console.log("响应点击")
       state.currentSheetIndex = payload.index[0]
       state.currentIndex = payload.index[1]
       state.changeSongSwitch = 1;
@@ -52,8 +53,7 @@ export default new Vuex.Store({
         state.currentIndex = payload.index[1]
         state.changeSongSwitch = 1;
       }
-
-    }
+    },
 
   },
   getters: {

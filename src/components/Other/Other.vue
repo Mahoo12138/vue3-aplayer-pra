@@ -303,6 +303,7 @@
 .newsImg{
     // 添加图片遮罩
     opacity:0.2; filter: alpha(opacity=60);
+    border-radius: 4px;
 }
 .weather{
     position: relative;
